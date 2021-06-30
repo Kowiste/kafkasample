@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  service-kafka:
+    build: .
+    container_name: service-kafka
+    restart: unless-stopped
+    environment: 
+      - KAFKA_ADDR=broker
+    networks:
+      - web  
+networks:
+  web:
+    external: true
+
